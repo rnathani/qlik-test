@@ -26,8 +26,10 @@ To run the application from command line, you may run one of the following comma
 ```bash
 **start: Amazon dynamoDB local**
 docker run -p 8000:8000 amazon/dynamodb-local
+
 **Start Application**
-mvn spring-boot:run 
+ mvn spring-boot:run  \
+-Dspring-boot.run.arguments="--amazon.dynamodb.endpoint=http://localhost:8000" 
 ```
 
 Open a browser and hit http://localhost:8080/ for service spec.
@@ -35,12 +37,7 @@ Open a browser and hit http://localhost:8080/ for service spec.
 ### Build and Run using Docker
 
 ```bash
-mvn install && \
-docker build -t cs-destination-dispatcher . && \
-docker run --rm -p 8080:8080 -p 8443:8443  \
--e SPRING_BOOT_ADMIN_CLIENT_ENABLED=false \
--e "EXPEDIA_ENVIRONMENT=test" \
--e "ACTIVE_VERSION=$(git rev-parse HEAD)" \
--e "EXPEDIA_DEPLOYED_ENVIRONMENT=test" \
-cs-destination-dispatcher
+mvn clean install -U && docker-compose up
 ```
+
+Open a browser and hit http://localhost:8080/ for service spec.
