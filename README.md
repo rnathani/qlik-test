@@ -27,8 +27,6 @@ The allowed environments are following :-
  - **Env** - All overrides for a specific environment go under specific environment key. 
  - If any field needs to be overridden for a particular environment, then that fields needs to be provided under that environment key.
 
-[![Screen-Shot-2020-09-29-at-9-54-59-AM.png](https://i.postimg.cc/J0BHSzGD/Screen-Shot-2020-09-29-at-9-54-59-AM.png)](https://postimg.cc/5QbtC15b)
-
 ```javascript
 {
   "global": {
