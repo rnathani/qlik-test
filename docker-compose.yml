@@ -4,6 +4,6 @@ services:
     image: amazon/dynamodb-local:latest
 
   qlik-test:
-    build: .
+    image: qlik-test
     ports:
       - 8080:8080

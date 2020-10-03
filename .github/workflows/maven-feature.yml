@@ -1,9 +1,10 @@
-dname: Feature Branch
+name: Feature Branch
 
 on:
   push:
-    branches:
+    branches-ignore:
       - 'main'
+      - 'release'
 
 jobs:
   test:
@@ -21,4 +22,3 @@ jobs:
       - name: Maven Verify
         run: mvn -B clean verify
 
-      

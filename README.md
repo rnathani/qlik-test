@@ -41,3 +41,9 @@ mvn clean install -U && docker-compose up
 ```
 
 Open a browser and hit http://localhost:8080/ for service spec.
+
+### Documentation:
+
+Application is using swagger documentation which can be viewed by running application locally or on the server.
+
+Open a browser and hit http://${server-name}:8080/ application will redirect to swagger documentation.

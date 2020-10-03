@@ -1,4 +1,4 @@
-FROM openjdk:14
+FROM openjdk:11
 
 ARG JAR_FILE=target/docker-qlik-test.jar
 
