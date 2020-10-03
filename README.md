@@ -28,7 +28,6 @@ The allowed environments are following :-
  - If any field needs to be overridden for a particular environment, then that fields needs to be provided under that environment key.
 
 ```javascript
-[Screen-Shot-2020-09-29-at-9-54-59-AM.png](https://postimg.cc/5QbtC15b)
 {
   "global": {
     "app_type": "expressjs",
