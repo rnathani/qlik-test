@@ -1,0 +1,6 @@
+amazon:
+  dynamodb:
+    endpoint: http://localhost:8084
+  aws:
+    accessKey: key
+    secretKey: key2

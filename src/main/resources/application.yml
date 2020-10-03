@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: qlik-test
+server:
+  port: 8080
+
+amazon:
+  dynamodb:
+    endpoint: http://dynamodb-local:8000
+  aws:
+    accessKey: key
+    secretKey: key2
+
+
+# Swagger
+swagger:
+  service:
+    version: "1.0"
+    title: ${spring.application.name}
+    description: "A service that provides APIs for ..."
+    termsPath: ""
+    licenceType: ""
+    licencePath: ""
