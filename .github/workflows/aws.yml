@@ -29,6 +29,8 @@ on:
       - 'main'
 
 jobs:
+  strategy:
+    max-parallel: 1
   test:
     name: Test
     runs-on: ubuntu-latest
