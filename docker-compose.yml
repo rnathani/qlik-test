@@ -4,6 +4,8 @@ services:
     image: amazon/dynamodb-local:latest
 
   qlik-test:
-    image: qlik-test
+    build: .
     ports:
       - 8080:8080
+    depends_on:
+      - dynamodb-local
