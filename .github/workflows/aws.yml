@@ -28,13 +28,9 @@ on:
     branches:
       - 'main'
 
-name: 
-
-name: Deploy to Amazon ECS
-
 jobs:
   test:
-    name: Unit Test
+    name: Test
     runs-on: ubuntu-latest
 
     steps:
@@ -46,7 +42,7 @@ jobs:
 
       - name: Maven Verify
         run: mvn -B clean verify
-  
+
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
