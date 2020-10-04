@@ -44,6 +44,7 @@ jobs:
         run: mvn -B clean verify
 
   deploy:
+    needs: [test]
     name: Deploy
     runs-on: ubuntu-latest
 
