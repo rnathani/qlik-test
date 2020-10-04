@@ -82,6 +82,6 @@ jobs:
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
-          service: sample-app-service
+          service: qlik-test-service
           cluster: qlik-test-cluster
           wait-for-service-stability: true
