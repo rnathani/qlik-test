@@ -46,7 +46,7 @@
       "dockerLabels": null,
       "systemControls": null,
       "privileged": null,
-      "name": "qlik-test-container"
+      "name": "sample-app"
     }
   ],
   "placementConstraints": [],
@@ -55,7 +55,7 @@
   "compatibilities": [
     "EC2"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:us-west-2:403808103525:task-definition/qlik-test:1",
+  "taskDefinitionArn": "arn:aws:ecs:us-west-2:403808103525:task-definition/qlik-test:2",
   "family": "qlik-test",
   "requiresAttributes": [
     {
@@ -77,7 +77,7 @@
   ],
   "networkMode": null,
   "cpu": null,
-  "revision": 1,
+  "revision": 2,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
