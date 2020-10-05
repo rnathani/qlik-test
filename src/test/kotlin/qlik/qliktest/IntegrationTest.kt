@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import io.restassured.RestAssured
 import io.restassured.response.ValidatableResponse
 import org.assertj.core.api.Assertions.assertThat
-import org.hamcrest.Matchers
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -43,7 +42,7 @@ class IntegrationTest {
     }
 
     @Test
-    fun `GIVEN empty DynamoDb WHEN GET endpoint is called THEN returns 200 status code`() {
+    fun `GIVEN empty DynamoDb WHEN GET endpoint is called THEN 404 status code is returned`() {
         try {
             RestAssured
                 .given()
@@ -51,8 +50,7 @@ class IntegrationTest {
                 .basePath(basePath)
                 .get()
                 .then()
-                .statusCode(HttpStatus.OK.value())
-                .body("isEmpty()", Matchers.`is`(true))
+                .statusCode(HttpStatus.NOT_FOUND.value())
         } finally {
             messageRepository.deleteAll()
         }
