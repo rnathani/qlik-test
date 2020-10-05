@@ -37,7 +37,7 @@ class ApplicationConfig {
     @Bean
     @Primary
     fun amazonDynamoDB(): AmazonDynamoDB {
-         val amazonDynamoDB = AmazonDynamoDBClientBuilder
+        val amazonDynamoDB = AmazonDynamoDBClientBuilder
             .standard()
             .withRegion("us-west-2")
             .build()
