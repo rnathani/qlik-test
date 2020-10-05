@@ -24,7 +24,7 @@
       ],
       "command": null,
       "linuxParameters": null,
-      "cpu": 1024,
+      "cpu": 0,
       "environment": [],
       "resourceRequirements": null,
       "ulimits": null,
@@ -33,7 +33,7 @@
       "workingDirectory": null,
       "secrets": null,
       "dockerSecurityOptions": null,
-      "memory": 256,
+      "memory": 512,
       "memoryReservation": null,
       "volumesFrom": [],
       "stopTimeout": null,
@@ -58,12 +58,12 @@
     }
   ],
   "placementConstraints": [],
-  "memory": "512",
+  "memory": "1024",
   "taskRoleArn": "arn:aws:iam::403808103525:role/dynamodb-access",
   "compatibilities": [
     "EC2"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:us-west-2:403808103525:task-definition/qlik-test-task:24",
+  "taskDefinitionArn": "arn:aws:ecs:us-west-2:403808103525:task-definition/qlik-test-task:37",
   "family": "qlik-test-task",
   "requiresAttributes": [
     {
@@ -109,7 +109,7 @@
   ],
   "networkMode": "bridge",
   "cpu": "1024",
-  "revision": 24,
+  "revision": 37,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
