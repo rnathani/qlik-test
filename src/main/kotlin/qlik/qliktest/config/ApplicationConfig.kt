@@ -1,7 +1,5 @@
 package qlik.qliktest.config
 
-import com.amazonaws.auth.AWSCredentials
-import com.amazonaws.auth.AWSCredentialsProvider
 import com.amazonaws.auth.AWSStaticCredentialsProvider
 import com.amazonaws.auth.BasicAWSCredentials
 import com.amazonaws.client.builder.AwsClientBuilder.EndpointConfiguration
@@ -11,6 +9,7 @@ import org.socialsignin.spring.data.dynamodb.repository.config.EnableDynamoDBRep
 import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import org.springframework.context.annotation.Primary
 import qlik.qliktest.checker.Checker
 import qlik.qliktest.checker.PalindromeChecker
 import qlik.qliktest.entity.MessageEntity
@@ -25,10 +24,10 @@ import qlik.qliktest.validator.RequestValidator
 class ApplicationConfig {
 
     @Bean
-    fun amazonDynamoDB(amazonProperties: AmazonProperties, amazonCredentialsProvider: AWSCredentialsProvider): AmazonDynamoDB? {
+    fun amazonDynamoDB(amazonProperties: AmazonProperties): AmazonDynamoDB? {
         val amazonDynamoDB = AmazonDynamoDBClientBuilder
             .standard()
-            .withCredentials(amazonCredentialsProvider)
+            .withCredentials(AWSStaticCredentialsProvider(BasicAWSCredentials(amazonProperties.aws.accessKey, amazonProperties.aws.secretKey)))
             .withEndpointConfiguration(EndpointConfiguration(amazonProperties.dynamoDB.endpoint, ""))
             .build()
         TableCreateUtil.createTableForEntity(amazonDynamoDB, MessageEntity::class)
@@ -36,13 +35,14 @@ class ApplicationConfig {
     }
 
     @Bean
-    fun amazonCredentialsProvider(awsCredentials: AWSCredentials): AWSCredentialsProvider {
-        return AWSStaticCredentialsProvider(awsCredentials)
-    }
-
-    @Bean
-    fun amazonAWSCredentials(amazonProperties: AmazonProperties): AWSCredentials {
-        return BasicAWSCredentials(amazonProperties.aws.accessKey, amazonProperties.aws.secretKey)
+    @Primary
+    fun amazonDynamoDB(): AmazonDynamoDB {
+         val amazonDynamoDB = AmazonDynamoDBClientBuilder
+            .standard()
+            .withRegion("us-west-2")
+            .build()
+        TableCreateUtil.createTableForEntity(amazonDynamoDB, MessageEntity::class)
+        return amazonDynamoDB
     }
 
     @Bean
