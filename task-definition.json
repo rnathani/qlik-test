@@ -1,6 +1,6 @@
 {
   "ipcMode": null,
-  "executionRoleArn": null,
+  "executionRoleArn": "arn:aws:iam::403808103525:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
       "dnsSearchDomains": null,
@@ -17,9 +17,9 @@
       "entryPoint": null,
       "portMappings": [
         {
-          "hostPort": 8080,
+          "hostPort": 80,
           "protocol": "tcp",
-          "containerPort": 8080
+          "containerPort": 80
         }
       ],
       "command": null,
@@ -33,11 +33,11 @@
       "workingDirectory": null,
       "secrets": null,
       "dockerSecurityOptions": null,
-      "memory": 500,
+      "memory": 256,
       "memoryReservation": null,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "403808103525.dkr.ecr.us-west-2.amazonaws.com/my-ecr-repo:0446253a6380edc2ef87628ddebec5f768f828b3",
+      "image": "403808103525.dkr.ecr.us-west-2.amazonaws.com/my-ecr-repo",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -54,16 +54,16 @@
       "dockerLabels": null,
       "systemControls": null,
       "privileged": null,
-      "name": "sample-app"
+      "name": "qlik-test-container"
     }
   ],
   "placementConstraints": [],
-  "memory": null,
+  "memory": "512",
   "taskRoleArn": "arn:aws:iam::403808103525:role/dynamodb-access",
   "compatibilities": [
     "EC2"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:us-west-2:403808103525:task-definition/qlik-test-task:1",
+  "taskDefinitionArn": "arn:aws:ecs:us-west-2:403808103525:task-definition/qlik-test-task:15",
   "family": "qlik-test-task",
   "requiresAttributes": [
     {
@@ -71,6 +71,12 @@
       "targetType": null,
       "value": null,
       "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "ecs.capability.execution-role-awslogs"
     },
     {
       "targetId": null,
@@ -89,15 +95,21 @@
       "targetType": null,
       "value": null,
       "name": "com.amazonaws.ecs.capability.task-iam-role"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "ecs.capability.execution-role-ecr-pull"
     }
   ],
   "pidMode": null,
   "requiresCompatibilities": [
     "EC2"
   ],
-  "networkMode": null,
-  "cpu": null,
-  "revision": 1,
+  "networkMode": "bridge",
+  "cpu": "1024",
+  "revision": 15,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
