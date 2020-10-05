@@ -6,7 +6,8 @@ server:
 
 amazon:
   dynamodb:
-    embedded: false
+    endpoint: http://localhost:8000
+    embedded: true
   aws:
     accessKey: key
     secretKey: key2
