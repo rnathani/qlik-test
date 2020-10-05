@@ -75,13 +75,13 @@ jobs:
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
           task-definition: task-definition.json
-          container-name: qlik-test-container
+          container-name: mytest-container
           image: ${{ steps.build-image.outputs.image }}
 
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
-          service: qlik-test-service
-          cluster: qlik-test-cluster
+          service: mytest-service
+          cluster: mytest-cluster
           wait-for-service-stability: true
