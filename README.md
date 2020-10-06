@@ -42,6 +42,11 @@ mvn clean install -U && docker-compose up
 
 Open a browser and hit http://localhost:8080/ for service spec.
 
+### Automated Deployment
+Build are tested and deployed in AWS ECS Cluster using Github Actions when PR is merged into Main.
+For feature branch only Unit and Integration tests are run
+
+
 ### Documentation:
 
 Application is using swagger documentation which can be viewed by running application locally or on the server.
