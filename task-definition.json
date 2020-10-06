@@ -1,6 +1,6 @@
 {
   "ipcMode": null,
-  "executionRoleArn": "arn:aws:iam::403808103525:role/dynamodb-access",
+  "executionRoleArn": "arn:aws:iam::403808103525:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
       "dnsSearchDomains": null,
@@ -19,7 +19,7 @@
         {
           "hostPort": 80,
           "protocol": "tcp",
-          "containerPort": 8080
+          "containerPort": 80
         }
       ],
       "command": null,
@@ -33,7 +33,7 @@
       "workingDirectory": null,
       "secrets": null,
       "dockerSecurityOptions": null,
-      "memory": 512,
+      "memory": 500,
       "memoryReservation": null,
       "volumesFrom": [],
       "stopTimeout": null,
@@ -58,12 +58,12 @@
     }
   ],
   "placementConstraints": [],
-  "memory": "512",
+  "memory": "1024",
   "taskRoleArn": "arn:aws:iam::403808103525:role/dynamodb-access",
   "compatibilities": [
     "EC2"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:us-west-2:403808103525:task-definition/qlik-test-task:54",
+  "taskDefinitionArn": "arn:aws:ecs:us-west-2:403808103525:task-definition/qlik-test-task:68",
   "family": "qlik-test-task",
   "requiresAttributes": [
     {
@@ -107,9 +107,9 @@
   "requiresCompatibilities": [
     "EC2"
   ],
-  "networkMode": "bridge",
+  "networkMode": null,
   "cpu": "1024",
-  "revision": 54,
+  "revision": 68,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
