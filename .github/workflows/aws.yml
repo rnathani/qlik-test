@@ -84,4 +84,3 @@ jobs:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
           service: cluster-task-service
           cluster: qlik-ecs-cluster
-          wait-for-service-stability: true
