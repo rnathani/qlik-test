@@ -4,7 +4,7 @@ Overview
 Application manages messages and provide information whether message is a palindrom or not.
 
 ## Architecture
-[![Screen-Shot-2020-10-02-at-9-42-02-PM.png](https://i.postimg.cc/SKnsLtnY/Screen-Shot-2020-10-02-at-9-42-02-PM.png)](https://postimg.cc/Mc8qq5bz)
+[![Screen-Shot-2020-10-06-at-9-21-48-AM.png](https://i.postimg.cc/wMB7xPmk/Screen-Shot-2020-10-06-at-9-21-48-AM.png)](https://postimg.cc/5YZxnspH)
 
 Message Manager application is a springboot application exposing CRUD operations to manage messages over HTTP. Application is powered by DynamoDB.
 
