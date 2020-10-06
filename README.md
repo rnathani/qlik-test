@@ -46,4 +46,4 @@ Open a browser and hit http://localhost:8080/ for service spec.
 
 Application is using swagger documentation which can be viewed by running application locally or on the server.
 
-Open a browser and hit http://${server-name}:8080/ application will redirect to swagger documentation.
+Open a browser and hit http://qlik-elb-60941415.us-west-2.elb.amazonaws.com/swagger-ui.html application will redirect to swagger documentation.
