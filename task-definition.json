@@ -37,7 +37,7 @@
       "memoryReservation": null,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "403808103525.dkr.ecr.us-west-2.amazonaws.com/my-ecr-repo",
+      "image": "403808103525.dkr.ecr.us-west-2.amazonaws.com/my-ecr-repo:34aaf3781058a0ad2388c079946198d77b20069e",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -63,7 +63,7 @@
   "compatibilities": [
     "EC2"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:us-west-2:403808103525:task-definition/test-task:1",
+  "taskDefinitionArn": "arn:aws:ecs:us-west-2:403808103525:task-definition/test-task:18",
   "family": "test-task",
   "requiresAttributes": [
     {
@@ -97,7 +97,7 @@
   ],
   "networkMode": "bridge",
   "cpu": null,
-  "revision": 1,
+  "revision": 18,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
