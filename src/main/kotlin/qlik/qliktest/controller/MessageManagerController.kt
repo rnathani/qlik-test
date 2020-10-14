@@ -33,11 +33,7 @@ class MessageManagerController(val messageService: MessageService, val requestVa
         LoggingContext.controllerName = "MessageManagerController"
         LoggingContext.controllerMethodName = "getMessages"
 
-        val entities = messageService.findAll().map { MessageRS(it.id, it.text, it.isPalindrome!!) }
-        if (entities.isEmpty()) {
-            throw MessageNotFoundException("No messages exists")
-        }
-        return entities
+        return messageService.findAll().map { MessageRS(it.id, it.text, it.isPalindrome!!) }
     }
 
     @GetMapping("/{messageId}")
